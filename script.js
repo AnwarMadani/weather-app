@@ -9,6 +9,7 @@ const info = document.querySelector('.info');
 const description = document.querySelector('.description');
 const humidity = document.querySelector('.humidity span');
 const wind = document.querySelector('.wind span');
+const apiKey = getApiKey();
 
 searchButton.addEventListener('click', () => {
 
@@ -16,7 +17,7 @@ searchButton.addEventListener('click', () => {
 
     const location = input.value;
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=6eb7e92177738851cad19a8f1699033f`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`)
     .then(response => response.json())
     .then(json => {
 
